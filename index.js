@@ -41,8 +41,8 @@ app.use(express.json());
 app.use(users);
 app.use(signin);
 app.use(signup);
-app.use(authenticateToken, rentals);
-app.use(authenticateToken, savedlists);
+app.use(rentals);
+app.use(savedlists);
 
 
 app.get("/", (req, res) => {
