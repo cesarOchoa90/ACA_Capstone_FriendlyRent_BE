@@ -10,7 +10,7 @@ const getRentalsbyZipCode = (req, res) => {
   const zipcode = req.params.zipcode;
   console.log(req);
 
-  const url = `https://api.rentcast.io/v1/listings/rental/long-term?zipCode=${zipcode}&status=Active&limit=5`;
+  const url = `https://api.rentcast.io/v1/listings/rental/long-term?zipCode=${zipcode}&status=Active&limit=100`;
   const options = {
     method: "GET",
     headers: {
