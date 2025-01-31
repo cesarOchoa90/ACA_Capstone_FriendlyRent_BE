@@ -26,9 +26,9 @@ const getSavedLists = (req, res) => {
   }
 
   const createSavedList = (req, res) =>{
-    const { ID, FirstName, LastName, Phone, Email } = req.body
-    const replacements = [ID, UserId, Prop, Phone, Email]
-    connection.query(`INSERT INTO Saved Properties (ID, UserId, PropertyId, DateTimeSaved ) VALUES (?,?,?,?)` , replacements,  (err, rows) => {
+    const { PropertyId, UserId } = req.body
+    const replacements = [UserId, PropertyId]
+    connection.query(`INSERT INTO Saved Properties (UserId, PropertyId ) VALUES (?,?)` , replacements,  (err, rows) => {
         if(err) {
           console.log({message: "Error occured:" + err});
           return res.status(500).send("An unexpected error occurred")
